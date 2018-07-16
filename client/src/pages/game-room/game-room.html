@@ -1,0 +1,21 @@
+<ion-content style="background-color: #263238">
+  <ion-card style=" height: 70%;
+                    margin-top: 15%;
+                    border-radius: 40px;
+                    background-color: #607D8B;
+                    text-align: center;
+                    color: white;
+                    ">
+    <div style="margin-top: 25%;
+                font-size: 25px;">
+      {{question}}
+    </div>
+    <div radio-group [(ngModel)]="answer">
+      <div *ngFor="let choice of choices">
+        <button ion-button round large (click)="submitAnswer(choice);enabled=true;" style="width: 80%" [ngClass]="{'bgColor':enabled}">
+          {{choice}}
+        </button>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>
